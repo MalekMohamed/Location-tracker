@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Location Tracker App</title>
+    <link rel="shortcut icon" href="https://cdn.wia.io/images/favicons/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script>
+        function getLocations() {
+            jQuery(document).ready(function ($) {
+                console.log('Getting locations from server...');
+                $.ajax({
+                    type: 'get',
+                    url: location.origin + '/client.php',
+                    data: {request: 'getLocation'},
+                    crossDomain: true,
+                    success: function (receive) {
+                        var response = $.parseJSON(receive);
+                        console.log(response);
+                        document.getElementById("lat").innerHTML = response.longitude;
+                        document.getElementById("lng").innerHTML = response.latitude;
+                        document.getElementById("alt").innerHTML = 2;
+                        document.getElementById("time").innerHTML = Date(response.timestamp);
+                        setNewCordinates(response.latitude,response.longitude);
+                    }
+                });
+            });
+        }
+        setInterval('getLocations()', 5000);
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading"><h1>Location Tracking App</h1></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="googleMap" style="height:500px;"></div>
+                            <script>
+                                function myMap() {
+                                    var mapProp= {
+                                        center:new google.maps.LatLng(30.14165600000,31.71858000000),
+                                        zoom:10,
+                                    };
+                                    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                    var marker = new google.maps.Marker({position: mapProp.center});
+
+                                    marker.setMap(map);
+                                }
+                                function setNewCordinates(Lat,Lng) {
+                                    var mapProp= {
+                                        center:new google.maps.LatLng(Lat,Lng),
+                                        zoom:15,
+                                    };
+                                    var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+                                    var marker = new google.maps.Marker({position: mapProp.center});
+
+                                    marker.setMap(map);
+                                }
+                            </script>
+                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmkj0IlK_ZERh-JDJHT-LB9IAQCCIlIqU&callback=myMap"
+                                    type="text/javascript"></script>
+                            <br>
+                            <p><b>Latitude: </b><span id="lat"></span></p>
+                            <p><b>Longitude: </b><span id="lng"></span></p>
+                            <p><b>Altitude: </b><span id="alt"></span></p>
+                            <p><b>Last Updated: </b><span id="time"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
