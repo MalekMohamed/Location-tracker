@@ -1,18 +1,23 @@
 Programming lang used :
 NodeJS [ serialport => https://www.npmjs.com/package/serialport , Wia => https://www.npmjs.com/package/wia , fs(FileSystem) => https://nodejs.org/api/fs.html ]
 HTML & CSS [ Bootstrap => https://getbootstrap.com/ ]
-Javascript [ jQuery => https://code.jquery.com/ ]
+Javascript [ jQuery => https://code.jquery.com/ , Google maps => https://developers.google.com/maps/documentation/javascript/tutorial ]
 PHP
-Arduino C [ TinyGPS => http://arduiniana.org/libraries/tinygpsplus/ , SoftwareSerial => https://www.arduino.cc/en/Reference/softwareSerial ]
+Arduino C [ TinyGPS++ => http://arduiniana.org/libraries/tinygpsplus/ , SoftwareSerial => https://www.arduino.cc/en/Reference/softwareSerial ]
 
 Component :
-Rasspberry PI 3 Model B+
-Arduino Uno
-GPS Module SKM55 [ http://www.skylab.com.cn/uploadfile/Download/201508011736275937.pdf ]
-MAX232 IC [ ]
+Rasspberry PI 3 Model B+ [ Place: Ram electronics , price : 1350 ]
+Arduino Uno [ Place: Ram electronics , price : 130 ]
+GPS Module SKM55 [ http://www.skylab.com.cn/uploadfile/Download/201508011736275937.pdf , Place : Future electronics , price : 420]
+MAX232 IC [ Place : Ram electronics , price : 10 ]
 
 Softwares & Servers :
 Raspbian [ https://www.raspberrypi.org/downloads/raspbian/ ]
 Arduino IDE [ https://www.arduino.cc/ ]
 Wia Cloud server [ https://www.wia.io/ ]
-Google maps 
+Google maps API [ https://developers.google.com/maps/documentation/javascript/tutorial ]
+
+Reference :
+Stack overflow [ https://stackoverflow.com ]
+arduino forum [ http://forum.arduino.cc ]
+Google api [ https://developers.google.com ]
