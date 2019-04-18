@@ -1,0 +1,18 @@
+Programming lang used :
+NodeJS [ serialport => https://www.npmjs.com/package/serialport , Wia => https://www.npmjs.com/package/wia , fs(FileSystem) => https://nodejs.org/api/fs.html ]
+HTML & CSS [ Bootstrap => https://getbootstrap.com/ ]
+Javascript [ jQuery => https://code.jquery.com/ ]
+PHP
+Arduino C [ TinyGPS => http://arduiniana.org/libraries/tinygpsplus/ , SoftwareSerial => https://www.arduino.cc/en/Reference/softwareSerial ]
+
+Component :
+Rasspberry PI 3 Model B+
+Arduino Uno
+GPS Module SKM55 [ http://www.skylab.com.cn/uploadfile/Download/201508011736275937.pdf ]
+MAX232 IC [ ]
+
+Softwares & Servers :
+Raspbian [ https://www.raspberrypi.org/downloads/raspbian/ ]
+Arduino IDE [ https://www.arduino.cc/ ]
+Wia Cloud server [ https://www.wia.io/ ]
+Google maps 
