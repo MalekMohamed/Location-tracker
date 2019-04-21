@@ -1,7 +1,7 @@
 #include <TinyGPS++.h>
 #include <SoftwareSerial.h>    
 static const int RXPin = 4, TXPin = 3;
-static const uint32_t GPSBaud = 115200;
+static const uint32_t GPSBaud = 9600;
 // The TinyGPS++ object
 TinyGPSPlus gps;
 // The serial connection to the GPS device
@@ -10,7 +10,7 @@ double longi,lati;
 void setup()  
 {
   // Open serial communications and wait for port to open:
-  Serial.begin(9600);
+  Serial.begin(115200);
   ss.begin(GPSBaud);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for Leonardo only
